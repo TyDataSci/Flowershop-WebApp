@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/dart-lang/sdk">
+    <!-- Iconscout CSS-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+
+    
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Dart file -->
+    <script defer src="src/controller/login_controller.dart.js"></script>
+    <title>Login & Registration</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="flexlogo">
+        <img src="assets/flower_drawing.svg" alt="">
+      <div class="logo">Forever Yours</div>
+    </div>
+      <ul class="nav">
+        <li>
+          <a base href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <header class="login">
+    <div class="container-login">
+      <div class="forms">
+        <!-- Login Form -->
+        <div class="form-login login">
+          <span class="title" id="title">Login</span>
+          <form action="#">
+            <div class="input-field">
+              <input type="text" class="email" placeholder="Enter your email" required>
+            <i class="uil uil-envelope"></i>
+            </div>
+            <div class="input-field">
+              <input type="password" class="password" placeholder="Enter your password" required>
+            <i class="uil uil-lock" id="lock"></i>
+            <i class="uil uil-eye-slash showHidePw" id="show-hide"></i>
+            </div>
+            <div class="checkbox-text">
+              <div class="checkbox-content">
+                <input type="checkbox" id="log-check">
+                <label for="log-check" class="text">Remember me</label>
+              </div>
+              <a href="#" class="text">Forgot password?</a>
+            </div>
+            <div class="input-field button">
+              <input type="button" id="login-button"
+              value="Login Now">
+            </div>
+            <div class="login-signup">
+              <span class="text">Not a member?
+                <a href="#" class="text signup-link">Sign up here</a>
+              </span>
+            </div>
+          
+          </form:>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form-login signup">
+          <span class="title">Register</span>
+          <form action="#">
+            <div class="input-field">
+              <input type="text" class="name" placeholder="Enter your name" required>
+            <i class="uil uil-user"></i>
+            </div>
+            <div class="input-field">
+              <input type="text" class="email" placeholder="Enter your email" required>
+            <i class="uil uil-envelope"></i>
+            </div>
+            <div class="input-field">
+              <input type="password" class="password" placeholder="Create your password" required>
+            <i class="uil uil-lock" id="lock"></i>
+            </div>
+            <div class="input-field">
+              <input type="password" class="password" placeholder="Confirm your password" required>
+            <i class="uil uil-lock" id="lock"></i>
+            <i class="uil uil-eye-slash showHidePw" id="show-hide"></i>
+            </div>
+            <div class="input-field button">
+              <input type="button" value="Register Now">
+            </div>
+            <div class="login-signup">
+              <span class="text">Already have an account?
+                <a href="#" class="text login-link">Login here</a>
+              </span>
+            </div>
+
+          </form:>
+        </div> 
+
+      </div>
+    </div>
+  </header>
+  
+  
+</body>
+</html>

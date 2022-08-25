@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Dart file -->
-    <script defer src="src/main.dart.js"></script>
-    <title>dart_application_1</title>
+    <script defer src="src/controller/login_controller.dart.js"></script>
+    <title>Login & Registration</title>
 </head>
 
 <body>
@@ -31,10 +31,7 @@
     </div>
       <ul class="nav">
         <li>
-          <a href="#">Order flowers</a>
-        </li>
-        <li>
-          <a href="login.html">Login</a>
+          <a href="order.html">Order flowers</a>
         </li>
         <li>
           <a href="account.html">Account</a>
@@ -42,43 +39,79 @@
       </ul>
     </div>
   </nav>
-  <header class="header">
-    <div class="container">
-      <div>
-        <h1 id="title">
-          Title of page
-        </h1>
-          <p>
-            Some text text text text text
-            Some text text text text text
-            Some text text text text text
-            Some text text text text text
-            Some text text text text text
-            Some text text text text text
-            Some text text text text text
-            Some text text text text text
-            Some text text text text text
-          </p>
-          <div class="toggle-container">
-            <input type="checkbox" id="delivery" class="toggle">
-            <label for="delivery" class="label">
-              <div class="ball"></div>
-            </label>
-            <span>delivery</span>
-          </div>
+  <header class="login">
+    <div class="container-login">
+      <div class="forms">
+        <!-- Login Form -->
+        <div class="form-login login">
+          <span class="title" id="title">Login</span>
+          <form action="#">
+            <div class="input-field">
+              <input type="text" class="email" placeholder="Enter your email" required>
+            <i class="uil uil-envelope"></i>
+            </div>
+            <div class="input-field">
+              <input type="password" class="password" placeholder="Enter your password" required>
+            <i class="uil uil-lock" id="lock"></i>
+            <i class="uil uil-eye-slash showHidePw" id="show-hide"></i>
+            </div>
+            <div class="checkbox-text">
+              <div class="checkbox-content">
+                <input type="checkbox" id="log-check">
+                <label for="log-check" class="text">Remember me</label>
+              </div>
+              <a href="#" class="text">Forgot password?</a>
+            </div>
+            <div class="input-field button">
+              <input type="button" id="login-button"
+              value="Login Now">
+            </div>
+            <div class="login-signup">
+              <span class="text">Not a member?
+                <a href="#" class="text signup-link">Sign up here</a>
+              </span>
+            </div>
+          
+          </form:>
+        </div>
 
-          <!----<div class="range-container">
-            <input type="range" id="range" min="0" max="100">
-            <label for="range">50</label>
-          </div>
-          ---->
+        <!-- Registration Form -->
+        <div class="form-login signup">
+          <span class="title">Register</span>
+          <form action="#">
+            <div class="input-field">
+              <input type="text" class="name" placeholder="Enter your name" required>
+            <i class="uil uil-user"></i>
+            </div>
+            <div class="input-field">
+              <input type="text" class="email" placeholder="Enter your email" required>
+            <i class="uil uil-envelope"></i>
+            </div>
+            <div class="input-field">
+              <input type="password" class="password" placeholder="Create your password" required>
+            <i class="uil uil-lock" id="lock"></i>
+            </div>
+            <div class="input-field">
+              <input type="password" class="password" placeholder="Confirm your password" required>
+            <i class="uil uil-lock" id="lock"></i>
+            <i class="uil uil-eye-slash showHidePw" id="show-hide"></i>
+            </div>
+            <div class="input-field button">
+              <input type="button" value="Register Now">
+            </div>
+            <div class="login-signup">
+              <span class="text">Already have an account?
+                <a href="#" class="text login-link">Login here</a>
+              </span>
+            </div>
+
+          </form:>
+        </div> 
+
       </div>
     </div>
-
-
-
   </header>
-
+  
   <section class="boxes">
     <div class="container">
       <div class="box">
@@ -111,27 +144,7 @@
     </div>
   </section>
 
-  <section>
-    <div class="wrapper">
-      <div id="search-container" >
-        <input type ="text" 
-        id="search-input"
-        placeholder="Search flower name here.."
-        />
-        <button id="search">Search</button>
-      </div>
-      <div id="buttons">
-        <button id="all" class="button-value active-button">All</button>
-        <button id="rose" class="button-value">Rose</button>
-        <button id="daisy" class="button-value">Daisy</button>
-        <button id="lily" class="button-value">Lily</button>
-        <button id="carnation" class="button-value">Carnation</button>
-      </div>
-      <div class="products">
-      </div>
-    </div>
-  </section>
 
- 
+  
 </body>
 </html>

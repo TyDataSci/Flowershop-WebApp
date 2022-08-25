@@ -64,6 +64,15 @@ html, body {
   align-items: center;
 }
 
+
+
+@media(max-width: 768px) {
+
+  .flexlogo img{
+    margin-bottom: 1.5em;
+  }
+}
+
 .toggle-container {
   display: flex;
   align-items: center;
@@ -226,7 +235,7 @@ ul {
 .navbar a {
   color: #333;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
 
 }
 .navbar a:hover {
@@ -584,8 +593,11 @@ section.chart {
 }
 
 .wrapper {
-  width: 95%;
-  margin: 0 auto;
+  width: 100%;
+  min-height: 400px;
+  min-width: 400px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 #search-container {
@@ -595,7 +607,7 @@ section.chart {
 
 #search-container input {
   background-color: transparent;
-  width: 40%;
+  width: 60%;
   border-bottom: 2px solid #110f29;
   padding: 1em 0.3em;
 }
@@ -606,20 +618,22 @@ section.chart {
 
 #search-container button {
   padding: 1em 2em;
-  margin-left: 1em;
+  margin-left: 1.1em;
   background-color: #6759ff;
   color: #fff;
   border-radius: 5px;
   margin-top: .5em;
+  cursor: pointer;
 }
 
 .button-value { 
   border: 2px solid #6759ff;
-  padding: 1em 2.2em;
+  padding: .5em 2.0em;
   border-radius: 3em;
   background-color: transparent;
   color: #6759ff;
   cursor: pointer;
+  margin-top: 0.3em;
 }
 
 .active-button {

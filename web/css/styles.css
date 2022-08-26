@@ -256,11 +256,63 @@ ul {
 
 .navbar ul {
   display: flex;
+  margin-top: 30px;
 }
 
 .navbar ul li {
-  margin-left: 20px;
+  margin-left: 25px;
 }
+
+.navbar i {
+  font-size: 15px;
+}
+
+
+.cart-button{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  top: -5px;
+
+}
+.cart-button:hover{
+  cursor: pointer;
+  background-color: rgb(230, 230, 230);
+
+}
+
+.cart-filled{
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  border-radius: 50%;
+  background-color: #ff7884;
+  width: 15px;
+  height: 15px;
+  color: #fff;
+  font-size: 10px;
+
+}
+
+.cart-empty{
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  border-radius: 50%;
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  color: #fff;
+  font-size: 10px;
+
+}
+
 
 .header {
   background-color: #fff;
@@ -273,7 +325,7 @@ ul {
 .header h1 {
   font-size: 27px;
   font-weight: 600;
-  padding: 25px;
+  padding: 25px 5px 5px;
 }
 
 .header p {
@@ -601,7 +653,8 @@ section.chart {
 }
 
 #search-container {
-  margin: 1em 0;
+  padding: 0 .5em 1em;
+
 
 }
 
@@ -617,27 +670,28 @@ section.chart {
 }
 
 #search-container button {
-  padding: 1em 2em;
-  margin-left: 1.1em;
-  background-color: #6759ff;
+  padding: 1.2em 1.5em;
+  margin-left: 0.1em;
+  background-color: #ff7884;
   color: #fff;
   border-radius: 5px;
   margin-top: .5em;
   cursor: pointer;
+  border: none;
 }
 
 .button-value { 
-  border: 2px solid #6759ff;
+  border: 2px solid #ff7884;
   padding: .5em 2.0em;
   border-radius: 3em;
   background-color: transparent;
-  color: #6759ff;
+  color: #ff7884;
   cursor: pointer;
   margin-top: 0.3em;
 }
 
 .active-button {
-  background-color: #6759ff;
+  background-color: #ff7884;
   color: #fff;
 }
 
@@ -678,8 +732,35 @@ section.chart {
   font-weight: 500;
 }
 
+.card-container button {
+  width: 30%;
+  margin-left: 33%;
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+}
+
+.card-container button:hover {
+  background-color:  #ff7884;
+  border: none;
+  cursor:pointer;
+}
+
+
 .hide {
   display: none;
+}
+
+#in-stock {
+  color: green;
+}
+
+#out-stock {
+  color: red;
+}
+
+#limited-inventory {
+  color: orange
 }
 
 @media screen and (max-width: 720px) {

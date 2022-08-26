@@ -31,19 +31,43 @@ var flowers = [
     "productName": "Daisy Arrangement",
     "price": "30",
     "type" : "daisy",
-    "image": "assets/flowers/rosearrangement.jpg"
+    "image": "assets/flowers/daisyarrangement.jpg"
   },
   {
      "productName": "Lily Arrangement",
     "price": "30",
     "type" : "lily",
-    "image": "assets/flowers/rosearrangement.jpg"
+    "image": "assets/flowers/lilyarrangement.jpg"
   },
    {
      "productName": "Carnation Arrangement",
     "price": "30",
     "type" : "carnation",
+    "image": "assets/flowers/carnationarrangement.jpg"
+  },
+  {
+    "productName": "Rose Arrangement",
+    "price": "30",
+    "type" : "rose",
     "image": "assets/flowers/rosearrangement.jpg"
+  },
+   {
+    "productName": "Daisy Arrangement",
+    "price": "30",
+    "type" : "daisy",
+    "image": "assets/flowers/daisyarrangement.jpg"
+  },
+  {
+     "productName": "Lily Arrangement",
+    "price": "30",
+    "type" : "lily",
+    "image": "assets/flowers/lilyarrangement.jpg"
+  },
+   {
+     "productName": "Carnation Arrangement",
+    "price": "30",
+    "type" : "carnation",
+    "image": "assets/flowers/carnationarrangement.jpg"
   }
 
 ];
@@ -54,9 +78,19 @@ for (var flower in flowers) {
   //image div
   var imageContainer = Element.div();
   imageContainer.classes.add('image-container');
-  // img 
+  // Create a status of in stock, out of stock, low inventory
+  var volumeStatus = HeadingElement.h5();
+  volumeStatus.innerHtml = 'In Stock';
+  //volumeStatus.innerHtml = 'Out of Stock';
+  //volumeStatus.innerHtml = 'Limited Inventory';
+  volumeStatus.id = 'in-stock';
+  //volumeStatus.id = 'out-stock';
+  //volumeStatus.id = 'limited-inventory';
+  // Create img element for container
   var image = Element.img();
   image.attributes['src'] = flower['image']!;
+  // Set volume status as child of image container
+  imageContainer.children.add(volumeStatus);
   // Set image as child of imageContainer
   imageContainer.children.add(image);
   // Set imageContainer as child of card
@@ -73,10 +107,22 @@ for (var flower in flowers) {
   // Display price of arrangement
   var price = HeadingElement.h6();
   price.innerText = '\$${flower['price']!}';
+  // Display button to add to cart 
+  var addToCart = ButtonElement();
+  var span = Element.span();
+  span.innerHtml = 'Add to Cart ';
+  var iElement  = Element.tag('i');
+  iElement.classes.add('fa');
+  iElement.classes.add('fa-shopping-basket');
   // Set name as child of card container
   cardContainer.children.add(name);
   // Set price as child of card container
   cardContainer.children.add(price);
+  // Add span and iElement to Add To Cart button
+  addToCart.children.add(span);
+  addToCart.children.add(iElement);
+  // add button to add to cart
+  cardContainer.children.add(addToCart);
   // Set card container as child of card
   card.children.add(cardContainer);
 

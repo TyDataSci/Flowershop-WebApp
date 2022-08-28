@@ -1,83 +1,16 @@
 import 'dart:html';
+import '../api/item_api.dart';
 
-void main() {
+void main() async {
 
-  querySelector('#title')?.text = 'Order Flowers';
- /*
-  var range = querySelector('#range');
-  range?.onChange.listen((event) {
-  var value = (event.currentTarget as InputElement).value;
-  var label = range.nextElementSibling;
-  label?.text = value;
-  });
- 
+querySelector('#title')?.text = 'Order Flowers';
 
-  // Animate Bar Charts // 
-  var bars = querySelectorAll('.bars li .bar');
-  for (var bar in bars) {
-      var value = bar.attributes['data-percentage'];
-      bar.style.height = '$value%';
-      bar.style.transition = '3s';
-  }*/
-// Create shopping catalog for flowers
-var flowers = [
-  {
-    "productName": "Rose Arrangement",
-    "price": "30",
-    "type" : "rose",
-    "image": "assets/flowers/rosearrangement.jpg"
-  },
-   {
-    "productName": "Daisy Arrangement",
-    "price": "30",
-    "type" : "daisy",
-    "image": "assets/flowers/daisyarrangement.jpg"
-  },
-  {
-     "productName": "Lily Arrangement",
-    "price": "30",
-    "type" : "lily",
-    "image": "assets/flowers/lilyarrangement.jpg"
-  },
-   {
-     "productName": "Carnation Arrangement",
-    "price": "30",
-    "type" : "carnation",
-    "image": "assets/flowers/carnationarrangement.jpg"
-  },
-  {
-    "productName": "Rose Arrangement",
-    "price": "30",
-    "type" : "rose",
-    "image": "assets/flowers/rosearrangement.jpg"
-  },
-   {
-    "productName": "Daisy Arrangement",
-    "price": "30",
-    "type" : "daisy",
-    "image": "assets/flowers/daisyarrangement.jpg"
-  },
-  {
-     "productName": "Lily Arrangement",
-    "price": "30",
-    "type" : "lily",
-    "image": "assets/flowers/lilyarrangement.jpg"
-  },
-   {
-     "productName": "Carnation Arrangement",
-    "price": "30",
-    "type" : "carnation",
-    "image": "assets/flowers/carnationarrangement.jpg"
-  }
-
-];
-
-
+var flowers = await getItems();
 
 for (var flower in flowers) {
   var card = Element.div();
   card.classes.add('card');
-  card.classes.add(flower['type']!);
+  card.classes.add(flower.type);
   //image div
   var imageContainer = Element.div();
   imageContainer.classes.add('image-container');
@@ -91,7 +24,7 @@ for (var flower in flowers) {
   //volumeStatus.id = 'limited-inventory';
   // Create img element for container
   var image = Element.img();
-  image.attributes['src'] = flower['image']!;
+  image.attributes['src'] = flower.image;
   // Set volume status as child of image container
   imageContainer.children.add(volumeStatus);
   // Set image as child of imageContainer
@@ -106,10 +39,10 @@ for (var flower in flowers) {
   // Display name of arrrangement
   var name = HeadingElement.h5();
   name.classes.add('product-name');
-  name.innerText = flower['productName']!.toUpperCase();
+  name.innerText = flower.description.toUpperCase();
   // Display price of arrangement
   var price = HeadingElement.h6();
-  price.innerText = '\$${flower['price']!}';
+  price.innerText = '\$${flower.price}';
   // Display button to add to cart 
   var addToCart = ButtonElement();
   var span = Element.span();
@@ -186,7 +119,3 @@ searchButton.onClick.listen((event) {
     });
   });
 }
-
-
-
-

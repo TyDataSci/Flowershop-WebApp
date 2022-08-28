@@ -7,6 +7,7 @@ void main() {
 // Create shopping catalog for flowers
 var flowers = [
   {
+   
     "productName": "Rose Arrangement",
     "price": "30",
     "type" : "rose",
@@ -71,7 +72,7 @@ for (var flower in flowers) {
   // Set imageContainer as child of card
   card.children.add(imageContainer);
   // Set card as child of Products
-  querySelector('.cart-products')?.children.add(card);
+  querySelector('.products')?.children.add(card);
   // Create Card Container
   var cardContainer = Element.div();
   cardContainer.classes.add("card-container");

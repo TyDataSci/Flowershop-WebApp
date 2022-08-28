@@ -34,8 +34,15 @@
           <a href="order.html">Order flowers</a>
         </li>
         <li>
-          <button type="button" class="cart-button"> 
-           <i class="fa fa-shopping-basket"></i><span id="cart-count">2</span>
+          <a href="account.html">Account</a>
+        </li>
+        
+        <li>
+          <button type="button" class="cart-button"
+          onclick="window.location.href='cart.html';"> 
+           <i class="fa fa-shopping-basket">
+           </i>
+           <span id="cart-count" class="cart-filled">1</span>
           </button>
         </li>
         <li>
@@ -44,17 +51,53 @@
       </ul>
     </div>
   </nav>
-  <header class="header">
+  <header class="header checkout">
     <div class="container">
-      <div>
+      <div class="cart-layout">
         <h1 id="title">
-          Your Cart
+        Your Cart
         </h1>
-        <div class="cart-products"></div>
+     <div class="flex-cart">   
+      <div class="cart">
+        <div class="cart-products">
+          <div class="box-product"><img src="assets/flowers/rosearrangement.jpg">
+          </div>
+          <div class="box-product">name</div>
+          <div class="box-product">count</div>
+          <div class="box-product">price</div>
+          <div class="box-product">total</div>
+        </div>
+        <div class="cart-products">
+          <div class="box-product"><img src="assets/flowers/rosearrangement.jpg">
+          </div>
+          <div class="box-product">name</div>
+          <div class="box-product">count</div>
+          <div class="box-product">price</div>
+          <div class="box-product">total</div>
+        </div>
+
         
+      </div>
+      <div class="cart-total">Order Summary
+        <h5>Subtotal</h5>
+        <h5>Delivery</h5>
+        <h5>Tax</h5>
+        <h5>Total</h5>
+        <div class="box-product">checkout</div>
+      </div>
+    </div> 
+
+      </div>
+    </div>
+  </div>
+</div>
+  </header>
+  
 
 
-         <!-- Create Toggle -->
+</body>
+
+ <!-- Create Toggle
          <div class="toggle-container">
           <input type="checkbox" id="delivery" class="toggle">
           <label for="delivery" class="label">
@@ -62,22 +105,5 @@
           </label>
           <span>delivery</span>
         </div>
-
-
-        
-
-      </div>
-    </div>
-
-
- <div class="container">
- 
-</div>
-
-
-  </header>
-  
-
-
-</body>
+      -->
 </html>

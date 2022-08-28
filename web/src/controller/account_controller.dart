@@ -17,8 +17,10 @@ void main() {
   var bars = querySelectorAll('.bars li .bar');
   for (var bar in bars) {
       var value = bar.attributes['data-percentage'];
+      value = '10';
       bar.style.height = '$value%';
       bar.style.transition = '3s';
+      bar.attributes['data-text'] = 'Low';
   }
 //Create shopping catalog for flowers
 /* 

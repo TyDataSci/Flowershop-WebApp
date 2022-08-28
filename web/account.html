@@ -34,8 +34,10 @@
           <a href="order.html">Order flowers</a>
         </li>
         <li>
-          <button type="button" class="cart-button"> 
-           <i class="fa fa-shopping-basket"></i><span id="cart-count">2</span>
+          <button type="button" class="cart-button" 
+          onclick="window.location.href='cart.html';"> 
+           <i class="fa fa-shopping-basket"></i>
+           <span id="cart-count" class="cart-filled">2</span>
           </button>
         </li>
         <li>
@@ -50,41 +52,97 @@
         <h1 id="title">
           Your Account
         </h1>
-          <div class="toggle-container">
-            <input type="checkbox" id="delivery" class="toggle">
-            <label for="delivery" class="label">
-              <div class="ball"></div>
-            </label>
-            <span>delivery</span>
+
+        <section class="boxes">
+          <div class="container">
+            <div class="box">
+              <h2> <i class="uil uil-check-circle"></i>
+              Roses</h2>
+              <div class="semi-donut" style="--percentage:100; --fill: #FFD700">In Stock</div>
+            </div>
+            <div class="box">
+              <img src="assets/classification.png">
+            </div>
           </div>
+        </section>
+
+        <section class="boxes">
+          <div class="container">
+            <div class="box">
+              <h2> <i class="uil uil-check-circle"></i>
+              Daisies </h2>
+              <div class="semi-donut" style="--percentage:50; --fill: #FFD700">In Stock</div>
+            </div>
+            <div class="box">
+              <img src="assets/classification.png">
+            </div>
+          </div>
+        </section>  
+        <section class="boxes">
+          <div class="container">
+            <div class="box">
+              <h2> <i class="uil uil-exclamation-circle"></i>
+                Lillies</h2>
+                <div class="semi-donut" style="--percentage:10; --fill: #FFD700">Low</div>
+            </div>
+            <div class="box">
+                <img src="assets/classification.png">
+            </div>
+          </div>
+        </section>
+
+        <section class="boxes">
+          <div class="container">
+            <div class="box">
+              <h2> <i class="uil uil-exclamation-circle"></i>
+                Carnations</h2>
+                <div class="semi-donut" style="--percentage:10; --fill: #FFD700">Low</div>
+            </div>
+            <div class="box">
+                <img src="assets/classification.png">
+            </div>
+          </div>
+        </section>
+
+
+
+
+       
 
       </div>
     </div>
 
- <!-- Bar Chart -->
+ <!--
  <div class="container">
  <section class="chart">
-
   <div class="chart">
     <ul class="numbers">
-      <li><span>100</span></li>
-      <li><span>50</span></li>
-      <li><span>0</span></li>
+      <li><span>Full</span></li>
+      <li><span>Semi</span></li>
+      <li><span>Low</span></li>
     </ul>
     <ul class="bars">
-      <li><div class="bar" data-percentage="50"></div><span>Roses</span></li>
-      <li><div class="bar" data-percentage="30"></div><span>Carnations</span></li>
-      <li><div class="bar" data-percentage="60"></div><span>Lillies</span></li>
-      <li><div class="bar" data-percentage="100"></div><span>Daisies</span></li>
-      <li><div class="bar" data-percentage="80" height="120px"></div><span>Sun Flowers</span></li>
+      <li><div class="bar" data-text="" data-percentage="50"></div><span>Roses</span></li>
+      <li><div class="bar" data-text="" data-percentage="10"></div><span>Carnations</span></li>
+      <li><div class="bar" data-text="" data-percentage="50"></div><span>Lillies</span></li>
+      <li><div class="bar" data-text="" data-percentage="100"></div><span>Daisies</span></li>
+      <li><div class="bar" data-text="" data-percentage="0" height="120px"></div><span>Sun Flowers</span></li>
     </ul>
   </div>
 </div>
 </section>
 </div>
-  </header>
-  
+-- Bar Chart 
 
- 
+<div class="semi-donut" style="--percentage:100; --fill: #ff7884">Full</div>
+
+<div class="semi-donut" style="--percentage:50; --fill: #ff7884">Semi-Full</div>
+
+<div class="semi-donut" style="--percentage:10; --fill: #ff7884">Limited Inventory</div>
+
+<div class="semi-donut" style="--percentage:0; --fill: #ff7884">Out of stock</div>
+--->
+
+  </header>
 </body>
 </html>

@@ -240,6 +240,7 @@ ul {
 }
 .navbar a:hover {
   color: #ff7884;
+
 }
 
 .navbar .container {
@@ -283,8 +284,8 @@ ul {
 }
 .cart-button:hover{
   cursor: pointer;
-  background-color: rgb(230, 230, 230);
-
+  border: 3px solid;
+  border-color: rgba(253, 114, 114, 0.171);
 }
 
 .cart-filled{
@@ -301,15 +302,7 @@ ul {
 }
 
 .cart-empty{
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  border-radius: 50%;
-  background-color: #fff;
-  width: 15px;
-  height: 15px;
-  color: #fff;
-  font-size: 10px;
+ display: none;
 
 }
 
@@ -548,10 +541,11 @@ header.login {
 }
 
 section.chart {
-  margin-left: 15%;
-  margin-right: 30%;
+  margin-left: 5%;
+  margin-right: 5%;
   padding: 0;
-  height: 600px;
+  height: 425px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -560,7 +554,7 @@ section.chart {
 }
 
 .chart{
-  width: 600px;
+  width: 100%;
   height: 300px;
   display: block;
 }
@@ -594,7 +588,7 @@ section.chart {
   font-weight: 600;
   background: #555;
   display: inline-block;
-  width: 500px;
+  width: 75%;
   height: 300px;
   box-shadow: 0 0 10px 0 #555;
   border-radius: 5px;
@@ -628,6 +622,7 @@ section.chart {
   transition: 0.5s;
   transition-property: background-color, box-shadow;
 
+
 }
 
 .bars .bar:hover {
@@ -638,9 +633,9 @@ section.chart {
 
 .bars .bar:before {
   color: #fff;
-  content: attr(data-percentage);
   position: relative;
   bottom: 20px;
+  content: attr(data-text);
 
 }
 
@@ -661,12 +656,12 @@ section.chart {
 #search-container input {
   background-color: transparent;
   width: 60%;
-  border-bottom: 2px solid #110f29;
+  border-bottom: 2px solid black;
   padding: 1em 0.3em;
 }
 
-#search-container input:focus {
-  border-bottom-color: #6759ff;
+#search-container input:hover {
+  border-bottom: 2px solid #ff7884;
 }
 
 #search-container button {
@@ -763,6 +758,17 @@ section.chart {
   color: orange
 }
 
+.cart-products { 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 1.5em;
+  padding: 2em 0; 
+
+}
+
+
 @media screen and (max-width: 720px) {
   img{
     max-width: 100%;
@@ -776,4 +782,42 @@ section.chart {
     grid-template-columns: auto auto;
     grid-column-gap: 1em;
   }
+}
+
+.semi-donut {
+  width: 300px;
+  height: 150px;
+  position: relative;
+  color: black;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 5px;
+  --percentage: 0;
+  --fill: #00f;
+
+
+}
+
+.semi-donut::after {
+ content: '';
+ position: absolute;
+ box-sizing: border-box;
+ width: 300px;
+ height: 300px;
+ left: 0;
+ top: 0;
+ border: 50px solid;
+ border-color:#444 #444 var(--fill) var(--fill);
+ border-radius: 50%;
+ transform: rotate(calc(1deg * (-45 + var(--percentage) * 1.8 )));
+ animation : fillAnimation 2.5s ease-in;
+
+}
+
+@keyframes fillAnimation{
+  0%{ transform: rotate(-45deg)}
+  50%{ transform: rotate(95eg)}
 }

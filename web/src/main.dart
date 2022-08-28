@@ -10,7 +10,7 @@ void main() {
   var label = range.nextElementSibling;
   label?.text = value;
   });
-  */
+ 
 
   // Animate Bar Charts // 
   var bars = querySelectorAll('.bars li .bar');
@@ -18,7 +18,7 @@ void main() {
       var value = bar.attributes['data-percentage'];
       bar.style.height = '$value%';
       bar.style.transition = '3s';
-  }
+  }*/
 // Create shopping catalog for flowers
 var flowers = [
   {

@@ -73,73 +73,6 @@ html, body {
   }
 }
 
-.toggle-container {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  width: 200px
-}
-
-.toggle {
-  visibility: hidden;
-}
-
-.toggle:checked + .label{
-  background-color: #8e44ad;
-}
-
-.label { 
-  position: relative;
-  background-color: #d0d0d0;
-  border-radius: 50px;
-  cursor: pointer;
-  margin: 0 5px 0;
-  width: 40px;
-  height: 21px;
-}
-
-.ball {
-  background: #fff;
-  height: 17px;
-  width: 17px;
-  border-radius: 50%;
-  position:absolute;
-  top: 2px;
-  left: 2px;
-  align-items: center;
-  justify-content: center;
-  animation: slideOff 0.3s linear forwards;
-}
-
-.toggle:checked + .label .ball{
-  animation: slideOn 0.3s linear forwards;
-}
-
-@keyframes slideOn {
-  0% {
-    transform: translateX(0) scale(1)
-  }
-  50% {
-    transform: translateX(11px) scale(1.2)
-  }
-  100% {
-    transform: translateX(20px) scale(1)
-  }
-}
-
-@keyframes slideOff {
-  0% {
-    transform: translateX(20px) scale(1)
-    
-  }
-  50% {
-    transform: translateX(11px) scale(1.2)
-  }
-  100% {
-    transform: translateX(0) scale(1)
-  }
-}
-
 .range-container { 
   position: relative;
 }
@@ -333,6 +266,8 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-left: 2%;
+
 }
 
 .boxes .container { 
@@ -741,6 +676,12 @@ section.chart {
   cursor:pointer;
 }
 
+.card-container button:active {
+  background-color:  #ffb9bf;
+  border: none;
+  cursor:pointer;
+}
+
 
 .hide {
   display: none;
@@ -784,9 +725,15 @@ section.chart {
 }
 
 .cart-total {
+  padding: 30px;
   width: 30%;
   height: 100%;
-  background-color: #ccc;
+  min-width: 175px;
+  background-color: rgb(255, 227, 255);
+  font-size: medium;
+  margin-left: 5%;
+  font-weight: normal;
+  border-radius: 5px;
 }
 
 .cart-layout {
@@ -797,23 +744,70 @@ section.chart {
 .box-product { 
   flex: 1;
   background:  #fff;
-  margin: 20px 0px;
+  margin: 20px 10px;
   padding: 15px 20px;
+  text-align: center;
+  max-width: 175px;
 }
 
 .box-product img { 
+  width: 75%;
+  height: 75%;
+  min-width: 70px;
+  min-height: 100px;
+}
+
+.remove-product:hover {
+  cursor: pointer;
+}
+
+.cart-total div {
+ 
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5%;
+  font-weight: normal;
+
+}
+
+.cart-total div h5{
+  font-weight: normal;
+
+}
+
+.cart-total .total h4{
+  font-weight:600;
+}
+
+.cart-total .tax {
+  border-bottom: 1px solid black ;
+}
+
+.cart-total .checkout{
+  margin-top: 1em;
   width: 100%;
-  height: 100%;
+  height: 50px;
+}
+.cart-total .checkout button{
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 2px 2px 0px rgba(178, 15, 228, 0.5);
+ 
+}
+
+.cart-total .checkout button:hover{
+  background-color: #8e44ad;
+  color: #fff;
+}
+
+.cart-total .checkout button:active{
+  background-color: #b97dd3;
 }
 
 
-@media screen and (max-width: 720px) {
-  .cart-table {
-    flex-direction: column;
-    padding-top: 20px;
-    text-align: center;
-  }
-
+@media screen and (max-width: 1015px) {
   .cart-products {
     flex-direction: column;
     padding-top: 20px;
@@ -873,4 +867,72 @@ section.chart {
 @keyframes fillAnimation{
   0%{ transform: rotate(-45deg)}
   50%{ transform: rotate(95eg)}
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+}
+
+.toggle {
+  visibility: hidden;
+}
+
+.toggle:checked + .label{
+  background-color: #8e44ad;
+}
+
+.label { 
+  position: relative;
+  background-color: #d0d0d0;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 0 5px 0;
+  width: 40px;
+  min-width: 40px;
+  height: 21px;
+}
+
+.ball {
+  background: #fff;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  position:absolute;
+  top: 2px;
+  left: 2px;
+  align-items: center;
+  justify-content: center;
+  animation: slideOff 0.3s linear forwards;
+}
+
+.toggle:checked + .label .ball{
+  animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+  0% {
+    transform: translateX(0) scale(1)
+  }
+  50% {
+    transform: translateX(11px) scale(1.2)
+  }
+  100% {
+    transform: translateX(17px) scale(1)
+  }
+}
+
+@keyframes slideOff {
+  0% {
+    transform: translateX(17px) scale(1)
+    
+  }
+  50% {
+    transform: translateX(11px) scale(1.2)
+  }
+  100% {
+    transform: translateX(-2px) scale(1)
+  }
 }

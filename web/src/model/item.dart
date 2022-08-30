@@ -1,3 +1,5 @@
+
+
 class Item {
 
 final String id;
@@ -26,5 +28,4 @@ Map<String, dynamic> toJson() => {
   'image' : image,
   'inventory' : inventory
 };
-
 }

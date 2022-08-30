@@ -4,8 +4,8 @@ import 'package:http/http.dart' as http;
 import 'api_host.dart';
 
 var host = Host();
-Future<Order> getItem(String id) async{
-    final url = Uri.http(host.url, "orders/id");
+Future<Order> getOrder(String id) async{
+    final url = Uri.http(host.url, "orders/$id");
     final response = await http.get(url);
    
     //print('Response status: ${response.statusCode}');
@@ -40,4 +40,18 @@ Future<List<Order>> getOrders() async{
 
       return orders;
     }
+}
+
+void updateOrder(Order order) async{
+  final url = Uri.http(host.url, "orders/$order.id");
+  var orderJson = order.toJson();
+  final response = await http.put(url, 
+                                  body:json.encode(orderJson));
+    //print('Response status: ${response.statusCode}');
+    if (response.statusCode != 200){
+
+      throw Exception('Error updating order');
+
+    }
+    
 }

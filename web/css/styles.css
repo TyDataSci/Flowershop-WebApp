@@ -682,11 +682,6 @@ section.chart {
   cursor:pointer;
 }
 
-
-.hide {
-  display: none;
-}
-
 #in-stock {
   color: green;
 }
@@ -935,4 +930,9 @@ section.chart {
   100% {
     transform: translateX(-2px) scale(1)
   }
+}
+
+
+.hide {
+  display: none;
 }

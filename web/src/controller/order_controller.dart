@@ -11,6 +11,8 @@ for (var flower in flowers) {
   var card = Element.div();
   card.classes.add('card');
   card.classes.add(flower.type);
+  // Card ID 
+  card.id = flower.id;
   //image div
   var imageContainer = Element.div();
   imageContainer.classes.add('image-container');
@@ -45,6 +47,7 @@ for (var flower in flowers) {
   price.innerText = '\$${flower.price}';
   // Display button to add to cart 
   var addToCart = ButtonElement();
+  addToCart.classes.add('addtocart-button');
   var span = Element.span();
   span.innerHtml = 'Add to Cart ';
   var iElement  = Element.tag('i');
@@ -118,4 +121,17 @@ searchButton.onClick.listen((event) {
         }
     });
   });
+
+
+var cartProducts = querySelectorAll('.card');
+  for (var cartProduct  in cartProducts) {
+      var removeButton = (cartProduct.querySelector('addtocart-button') as ButtonElement);
+        removeButton.onClick.listen((event) {
+           var productID = cartProduct.id;
+           
+      });
+    }
+
+
+
 }

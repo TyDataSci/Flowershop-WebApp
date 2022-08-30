@@ -1,9 +1,13 @@
+import '../api/item_api.dart';
+import '../model/item.dart';
+import 'dart:convert';
+
 class Order {
 
 final String id;
 String date; 
 String userID;
-Map<String, dynamic> items;
+List<Item> items;
 String deliveryType;
 String note;
 String instructions;
@@ -18,7 +22,7 @@ Order.fromJson(Map<String, dynamic> json)
   : id =  json['id'],
     date = json['date'],
     userID = json['userid'],
-    items = json['items'],
+    items = castListItems(json['items']),
     deliveryType = json['deliverytype'],
     note = json['note'],
     instructions = json['instructions'],
@@ -35,4 +39,19 @@ Map<String, dynamic> toJson() => {
   'totalcost' :     totalCost,
 };
 
+void addItem (String itemID) async{
+  var addItem = await getItem(itemID);
+  items.add(addItem);
 }
+  
+
+}
+
+List<Item> castListItems(List<dynamic> genericList) {
+  List<Item> items = [];
+  for (var generic in genericList) {
+      var newItem = Item.fromJson(generic);
+      items.add(newItem);
+    }
+      return items;
+  }

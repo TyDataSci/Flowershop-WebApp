@@ -1,27 +1,24 @@
 import 'dart:html';
+import '../api/order_item_api.dart';
+import '../api/user_api.dart';
 import '../utils/utility.dart';
-import '../api/item_api.dart';
+//import '../api/item_api.dart';
 import '../model/item.dart';
 
-void main()async {
-  setTitle('Your Cart');
-  hideCartCount();
+void main() async {
 
-// Create shopping catalog for flowers
-List<Item> items = [];
-items.add(await getItem("FL1RA"));
-updateCartCount(1);
-items.add(await getItem("FL1LA"));
-updateCartCount(1);
-items.add(await getItem("FL1CA"));
-updateCartCount(1);
+var userSession = await getUserSession();
+setTitle('Your Cart');
+hideCartCount();
+setCartCount(userSession.orderID);
+
 
 
 void displayCart(List<Item> items) async{ 
   for (var item in items) {
     var cartProduct = Element.div();
     cartProduct.classes.add('cart-products');
-    cartProduct.id = item.id;
+    cartProduct.id = item.id.toString();
     //image div
     var imageContainer = Element.div();
     imageContainer.classes.add('box-product');
@@ -71,13 +68,22 @@ void displayCart(List<Item> items) async{
         }
     } 
 
-displayCart(items);
+
+
+Future<List<Item>> removeItem(String productID) async {
+  var list = await removeOrderItem(userSession.orderID, productID);     
+  setCartCount(userSession.orderID);
+  return list;
+}
+
+displayCart(await getOrderItems(userSession.orderID));
 
 var cartProducts = querySelectorAll('.cart-products');
   for (var cartProduct  in cartProducts) {
       var removeButton = (cartProduct.querySelector('.remove-product') as ButtonElement);
         removeButton.onClick.listen((event) {
             cartProduct.classes.add('hide');
+            removeItem(cartProduct.id);
       });
     }
 

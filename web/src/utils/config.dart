@@ -1,3 +1,5 @@
 final Map configuration = const {
-  'host': '192.168.56.1:8000'
+  //'host': 'localhost:8000'
+  'host': 'api.foreveryoursflowershop.com',
+  'inventory-host': 'api.foreveryoursflowershop.com'
 };

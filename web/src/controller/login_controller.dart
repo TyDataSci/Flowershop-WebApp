@@ -1,12 +1,13 @@
 import 'dart:html';
 import '../model/user.dart';
 import '../api/user_api.dart';
-import '../utils/utility.dart';
-void main() async{
 
+
+void main() async{
+await getUserSession();
 // Show Hide Password on click of change icon // 
-  var showHideIcons =  querySelectorAll('.showHidePw');
-  var passFields =  querySelectorAll('.password');
+var showHideIcons =  querySelectorAll('.showHidePw');
+var passFields =  querySelectorAll('.password');
 for (var icon in showHideIcons) {
   {
   icon.onClick.listen((event) {
@@ -42,23 +43,18 @@ var loginButton = (querySelector('#login-button') as InputElement);
 loginButton.onClick.listen((event) async {
   var email = (querySelector('.email') as InputElement).value;
   var password = (querySelector('.password') as InputElement).value;
-  var verifyName = '';
-  String? verifyPassword = '';
-  if (email !=null && email.isNotEmpty) {
-     User user = await getUser(email); 
-     verifyName = user.username;
-     verifyPassword = user.password;
-    if (email.toLowerCase() == verifyName.toLowerCase()){
-      if (password == verifyPassword){
-          setTitle('login successful');
+  if (email !=null && email.isNotEmpty && password != null && password.isNotEmpty) {
+     var loginUser = User(0,email,"",password);
+     var user = await validateUser(loginUser);
+      if (user.id != 0){
+          window.location.replace('order.html');
         }
       else{
-          setTitle('login failed');
+          querySelector('#title')?.text ='login failed';
         }   
       }      
-   }
   else {
-    querySelector('#title')?.text = 'else';
+    querySelector('#title')?.text = 'Username and password are required';
     } 
   });
 

@@ -1,6 +1,8 @@
 // Util function to set title
 import 'dart:html';
 
+import '../api/order_item_api.dart';
+
   void setTitle(String string) {
      querySelector('#title')?.text = string;
   }
@@ -10,23 +12,23 @@ void hideCartCount() {
     cartCount?.classes.add('hide');
 }
 
-void updateCartCount(int increment) {
+void setCartCount(int orderID) async{
     var cartCount = querySelector('#cart-count');
-
-    var count = int.parse(cartCount!.innerText);
-    if (count > 0  && increment < 0) {
-      count = count - increment;
-    }
-    else if (increment > 0){
-      count = count + increment;
-    }
-
-    if (count > 0) {
-      cartCount.classes.remove('hide');
-    }
-    else {
-      cartCount.classes.add('hide');
+    int count = 0;
+    var cartItems = await getOrderItems(orderID);
+    count = cartItems.length;
+   
+        if (count > 0) {
+          cartCount?.classes.remove('hide');
+        }
+        else {
+          cartCount?.classes.add('hide');
+        }
+          cartCount?.innerText = count.toString();
     }
     
-    cartCount.innerText = count.toString();
-}
+
+    
+
+    
+

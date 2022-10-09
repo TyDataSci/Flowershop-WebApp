@@ -5,7 +5,7 @@ import 'api_host.dart';
 
 var host = Host();
 Future<Item> getItem(String id) async{
-    final url = Uri.http(host.url, "flowers/$id");
+    final url = Uri.https(host.url, "items/$id");
     final response = await http.get(url);
    
     //print('Response status: ${response.statusCode}');
@@ -22,7 +22,7 @@ Future<Item> getItem(String id) async{
 
 
 Future<List<Item>> getItems() async{
-    final url = Uri.http(host.url, "flowers");
+    final url = Uri.https(host.url, "items");
     final response = await http.get(url);
     List<Item> flowers = [];
    

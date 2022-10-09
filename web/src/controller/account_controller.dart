@@ -1,7 +1,10 @@
 import 'dart:html';
 import '../utils/utility.dart';
+import '../api/user_api.dart';
 
-void main() {
+void main() async{
+  var userSession = await getUserSession();
+  setCartCount(userSession.orderID);
   setTitle('Admin Account');
 
  /*
@@ -12,7 +15,7 @@ void main() {
   label?.text = value;
   });
   */
-
+  var values = {'full': '100', 'semi-full': '50', 'low': '10','out of stock': '0'};
   // Animate Bar Charts // 
   var bars = querySelectorAll('.bars li .bar');
   for (var bar in bars) {
@@ -22,36 +25,7 @@ void main() {
       bar.style.transition = '3s';
       bar.attributes['data-text'] = 'Low';
   }
-//Create shopping catalog for flowers
-/* 
-var flowers = [
-  {
-    "productName": "Rose Arrangement",
-    "price": "30",
-    "type" : "rose",
-    "image": "assets/flowers/rosearrangement.jpg"
-  },
-   {
-    "productName": "Daisy Arrangement",
-    "price": "30",
-    "type" : "daisy",
-    "image": "assets/flowers/rosearrangement.jpg"
-  },
-  {
-     "productName": "Lily Arrangement",
-    "price": "30",
-    "type" : "lily",
-    "image": "assets/flowers/rosearrangement.jpg"
-  },
-   {
-     "productName": "Carnation Arrangement",
-    "price": "30",
-    "type" : "carnation",
-    "image": "assets/flowers/rosearrangement.jpg"
-  }
 
-];
-*/
 }
 
 

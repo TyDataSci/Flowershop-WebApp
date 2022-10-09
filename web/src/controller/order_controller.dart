@@ -1,8 +1,15 @@
+import 'dart:ffi';
 import 'dart:html';
 import '../api/item_api.dart';
+import '../api/order_item_api.dart';
+import '../api/user_api.dart';
+import '../model/item.dart';
+import '../utils/utility.dart';
+
 
 void main() async {
-
+var userSession = await getUserSession();
+setCartCount(userSession.orderID);
 querySelector('#title')?.text = 'Order Flowers';
 
 var flowers = await getItems();
@@ -12,7 +19,7 @@ for (var flower in flowers) {
   card.classes.add('card');
   card.classes.add(flower.type);
   // Card ID 
-  card.id = flower.id;
+  card.id = flower.id.toString();
   //image div
   var imageContainer = Element.div();
   imageContainer.classes.add('image-container');
@@ -122,13 +129,19 @@ searchButton.onClick.listen((event) {
     });
   });
 
+Future<List<Item>> addItem(String productID) async {
+  var list = await addOrderItem(userSession.orderID, productID);     
+  setCartCount(userSession.orderID);
+  return list;
+}
 
 var cartProducts = querySelectorAll('.card');
   for (var cartProduct  in cartProducts) {
-      var removeButton = (cartProduct.querySelector('addtocart-button') as ButtonElement);
-        removeButton.onClick.listen((event) {
-           var productID = cartProduct.id;
-           
+      var addButton = (cartProduct.querySelector('.addtocart-button') as ButtonElement);
+        addButton.onClick.listen((event) {
+           //var productID = cartProduct.id;
+           addItem(cartProduct.id);
+       
       });
     }
 

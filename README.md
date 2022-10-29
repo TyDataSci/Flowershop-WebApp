@@ -1,1 +1,1 @@
-An absolute bare-bones web app.
+The frontend of the flower shop web application.

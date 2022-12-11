@@ -1,6 +1,6 @@
 The frontend of the flower shop web application.
 
-<h3 align="center">Automating Inventory Management with Image Classification</h3> 
+<h3 align="left">Automating Inventory Management with Image Classification</h3> 
 <p align="left">E-Commerce flower shop web application for Computer Science capstone project composed of a Dart frontend, a Golang backend, and a Python microservice running a PyTorch image classification model. Each service is integrated using Rest APIs of JSON format, with data stored in AWS Postgres database and deployed as AWS EC2 instances. The image classifier receives flower bucket image inputs and returns the classification of "Full," "Semi-Full," "Low," or "Out of Stock" which is then used to define product availability to online customers.
   </p>
 <p align="left">

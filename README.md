@@ -11,3 +11,8 @@ The frontend of the flower shop web application.
   <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a>
  <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a>  </p>
 <img src="https://user-images.githubusercontent.com/50123232/206923093-96c7b393-6c29-4670-839e-5e5def827a37.png" />
+<img src="https://user-images.githubusercontent.com/50123232/206923666-e90550f4-c636-4e75-8d20-dc621074622a.png" />
+![viz1](https://user-images.githubusercontent.com/50123232/206923787-b885dd3d-22db-4961-91b2-3d3cb41b80fe.png)
+![viz2](https://user-images.githubusercontent.com/50123232/206923791-d687a808-77da-4475-8882-1c7129de85e8.png)
+![viz3](https://user-images.githubusercontent.com/50123232/206923792-0a6f58f7-2e2d-438f-bc75-4c69bda06ffe.png)
+![viz4](https://user-images.githubusercontent.com/50123232/206923796-6b91cebd-d60f-4724-a926-87459a14fba6.png)

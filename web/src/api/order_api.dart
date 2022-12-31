@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:dio/dio.dart';
+
 import '../model/order.dart';
 import 'package:http/http.dart' as http;
 import 'api_host.dart';
@@ -55,3 +57,17 @@ void updateOrder(Order order) async{
     }
     
 }
+
+void completeOrder(int userID) async{
+  final url = Uri.https(host.url, "orders/$userID/completed");
+  var dio = Dio();
+    dio.options.extra['withCredentials'] = true;
+    try {
+      await dio.put(url.toString());
+    }
+    catch (e) {
+      throw Exception('Error updating order');
+    }
+    
+}
+

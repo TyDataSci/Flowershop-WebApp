@@ -6,7 +6,7 @@ import 'api_host.dart';
 var host = InventoryHost();
 
 Future<List<Stock>> getInventory() async{
-    final url = Uri.http(host.url, "stock");
+    final url = Uri.https(host.url, "stock");
     final response = await http.get(url);
     List<Stock> inventory = [];
    
@@ -27,7 +27,7 @@ Future<List<Stock>> getInventory() async{
 }
 
 Future<List<Stock>> getDemo() async{
-    final url = Uri.http(host.url, "demo");
+    final url = Uri.https(host.url, "demo");
     final response = await http.get(url);
     List<Stock> inventory = [];
    

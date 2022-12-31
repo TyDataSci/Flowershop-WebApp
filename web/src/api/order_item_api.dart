@@ -17,13 +17,19 @@ Future<List<Item>> getOrderItems(int orderID) async{
 
     }
     else {
-      var orderItemsJson = jsonDecode(response.body);
-      for (var item in orderItemsJson) {
+      try{
+        var orderItemsJson = jsonDecode(response.body);
+         for (var item in orderItemsJson) {
         orderItems.add(Item.fromJson(item));
+        }
       }
+      catch  (e) {
+        print(e);
+      }
+    }
 
       return orderItems;
-    }
+
 }
 
 

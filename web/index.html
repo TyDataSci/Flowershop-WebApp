@@ -51,10 +51,15 @@
             </div>
             <div class="checkbox-text">
               <div class="checkbox-content">
+              <!--
                 <input type="checkbox" id="log-check">
                 <label for="log-check" class="text">Remember me</label>
+              -->
               </div>
+              <!--
               <a href="#" class="text">Forgot password?</a>
+              -->
+            
             </div>
             <div class="input-field button">
               <input type="button" id="login-button"
@@ -74,24 +79,25 @@
           <span class="title">Register</span>
           <form action="#">
             <div class="input-field">
-              <input type="text" class="name" placeholder="Enter your name" required>
+              <input type="text" class="register-name" placeholder="Enter your name" required>
             <i class="uil uil-user"></i>
             </div>
             <div class="input-field">
-              <input type="text" class="email" placeholder="Enter your email" required>
+              <input type="text" class="register-email" placeholder="Enter your email" required>
             <i class="uil uil-envelope"></i>
             </div>
             <div class="input-field">
-              <input type="password" class="password" placeholder="Create your password" required>
+              <input type="password" class="password-create password" placeholder="Create your password" required>
             <i class="uil uil-lock" id="lock"></i>
             </div>
             <div class="input-field">
-              <input type="password" class="password" placeholder="Confirm your password" required>
+              <input type="password" class="password-confirm password" placeholder="Confirm your password" required>
             <i class="uil uil-lock" id="lock"></i>
             <i class="uil uil-eye-slash showHidePw" id="show-hide"></i>
             </div>
+            <div class="register-textbox"></div>
             <div class="input-field button">
-              <input type="button" value="Register Now">
+              <input type="button" value="Register Now" id="register-button">
             </div>
             <div class="login-signup">
               <span class="text">Already have an account?
@@ -106,34 +112,30 @@
     </div>
   </header>
   
-  <section class="boxes">
+  <section class="boxes footer">
     <div class="container">
-      <div class="box">
-        <h2> <i class="fas fa-arrows-alt-v"></i>
-        Alignment & Space</h2>
-      <p>
-        Some text text text text text
-        Some text text text text text
-        Some text text text text text
-      </p>
+      <div class="box address">
+        <p><i class="uil uil-location-point"></i>   
+        120 W Gilman St<br>Sheffield, IA 50475
+        </p>
       </div>
       <div class="box">
-        <h2> <i class="fas fa-arrows-alt-v"></i>
-        Tricky Formatting </h2>
-      <p>
-        Some text text text text text
-        Some text text text text text
-        Some text text text text text
-      </p>
+        
+      <h6>
+Sunday	Closed<br>
+Monday	Closed<br>
+Tuesday	12–3PM<br>
+Wednesday	12–3PM<br>
+Thursday	12–3PM<br>
+Friday	12–3PM<br>
+Saturday	9AM–12PM
+      </h6>
       </div>
       <div class="box">
-        <h2> <i class="fas fa-arrows-alt-v"></i>
-          Responsive Design</h2>
-      <p>
-        Some text text text text text
-        Some text text text text text
-        Some text text text text text
-      </p>
+        <p>
+          <i class="uil uil-phone"></i>
+       (641) 892-4681
+        </p>
       </div>
     </div>
   </section>

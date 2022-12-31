@@ -33,8 +33,8 @@
         <li>
           <a href="order.html">Order</a>
         </li>
-        <li>
-          <a href="account.html">Account</a>
+        <li class="admin hide">
+          <a href="account.html">Admin</a>
         </li>
         
         <li>
@@ -61,35 +61,21 @@
       <div class="cart">
       </div>
       <div class="cart-total">Order Summary
-        <div class="subtotal">
+        <div>
           <h5>Subtotal</h5>
-          <h5>100.00</h5>
+          <h5 id="subtotal">00.00</h5>
         </div>
-        <div class="delivery">
-          <h5>Delivery</h5>
-          <h5>3.00</h5>
-
-        </div>
-        <div class="tax">
+        <div>
           <h5>Tax</h5>
-          <h5>7.00</h5>
+          <h5 id="tax">0.00</h5>
         </div>
-       <div class="total">
+       <div>
         <h4>Total</h4>
-        <h4>$107.00</h4>
+        <h4 id="total">$00.00</h4>
        </div>
        <div class="checkout">
-        <button>Check Out</button>
+        <button id="checkout-button">Check Out</button>
        </div>
-        <!-- Create Toggle-->
-<div class="toggle-container">
-  <span>delivery</span>
-  <input type="checkbox" id="delivery" class="toggle">
-  <label for="delivery" class="label">
-    <div class="ball"></div>
-  </label>
-  
-</div>
       </div>
      
     </div> 

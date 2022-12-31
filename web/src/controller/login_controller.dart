@@ -50,12 +50,44 @@ loginButton.onClick.listen((event) async {
           window.location.replace('order.html');
         }
       else{
-          querySelector('#title')?.text ='login failed';
+        querySelector('.checkbox-content')?.text ='Incorrect username or password.';
         }   
       }      
   else {
-    querySelector('#title')?.text = 'Username and password are required';
+    querySelector('.checkbox-content')?.text = 'Username and password are required';
     } 
   });
+
+
+  var registerButton = (querySelector('#register-button') as InputElement);
+registerButton.onClick.listen((event) async {
+  var name = (querySelector('.register-name') as InputElement).value;
+  var email = (querySelector('.register-email') as InputElement).value;
+  var createPassword = (querySelector('.password-create') as InputElement).value;
+  var confirmPassword = (querySelector('.password-confirm') as InputElement).value;
+  if (name !=null && name.isNotEmpty && email !=null && email.isNotEmpty 
+  && createPassword != null && createPassword.isNotEmpty && confirmPassword != null && confirmPassword.isNotEmpty) {
+      if (createPassword == confirmPassword ){
+          var user = User(0, name, email, createPassword);
+          await createUser(user);
+          querySelector('.register-textbox')?.text ='Registering now.';
+          await Future.delayed(Duration(seconds: 1));
+          querySelector('.register-textbox')?.text ='Registering now..';
+          await Future.delayed(Duration(seconds: 1));
+          querySelector('.register-textbox')?.text ='Registering now...';
+          await Future.delayed(Duration(seconds: 1));
+          await validateUser(user);
+          window.location.replace('order.html');
+        }
+      else{
+        querySelector('.register-textbox')?.text ='Confirmation password does not match.';
+        }   
+      }      
+  else {
+    querySelector('.register-textbox')?.text = 'All fields are required';
+    } 
+  });
+
+
 
 }

@@ -18,3 +18,13 @@ Map<String, dynamic> toJson() => {
   'image' : image,
   };
 }
+
+Map<String, String> stockTypeStatus(List<Stock> stockList) {
+   Map<String,String> stockTypeStatus = {};
+  for (var stock in stockList) {
+      var stockType = stock.type;
+      var stockStatus = stock.status;
+      stockTypeStatus[stockType] = stockStatus;
+    }
+      return stockTypeStatus;
+  }

@@ -24,6 +24,20 @@ Future<User> getUser(String username) async{
     }
 }
 
+Future<void> createUser(User user) async{
+    final url = Uri.https(host.url, "users");
+    var dio = Dio();
+    var package = json.encode(user.toJson());
+    dio.options.extra['withCredentials'] = true;
+    try {
+      await dio.post(url.toString(),data: package);
+    }
+    catch (e) { 
+        print("Register validation failed");
+    }
+}
+
+
 /*
 Future<Session> getUserSession() async{
     final url = Uri.https(host.url, "user");
@@ -59,13 +73,9 @@ Future<User> validateUser(User user) async{
     var dio = Dio();
     var package = json.encode(user.toJson());
     dio.options.extra['withCredentials'] = true;
-    var response = await dio.post(url.toString(),data: package);
-    //var userSessionJson = response.data;
-    //final response = await http.post(url,
-    //body: package);
-   
-   // print('Response status: ${response.statusCode}');
-    if (response.statusCode != 200){
+    try {
+      var response = await dio.post(url.toString(),data: package);
+         if (response.statusCode != 200){
       print("Login validation failed");
       return user; 
 
@@ -77,4 +87,16 @@ Future<User> validateUser(User user) async{
       var userJson = response.data;
       return User.fromJson(userJson);
     }
+    }
+    catch (e) { 
+        print("Login validation failed");
+        return user; 
+    }
+    
+    //var userSessionJson = response.data;
+    //final response = await http.post(url,
+    //body: package);
+   
+   // print('Response status: ${response.statusCode}');
+ 
 }
